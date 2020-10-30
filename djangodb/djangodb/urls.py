@@ -18,9 +18,12 @@ from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
-    path('', mainapp.index),
-    path('city/', mainapp.city),
-    path('categories/', mainapp.categories),
+    path('', mainapp.index, name='index'),
+    path('city/', mainapp.city, name='city'),
+
+    path('categories/', mainapp.categories, name='categories'),
+
+    path('categories/sight/<int:pk>/', mainapp.sight_page, name='sight_page'),
 
     path('admin/', admin.site.urls),
 ]
