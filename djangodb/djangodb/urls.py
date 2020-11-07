@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
+    path('', include('authapp.urls', namespace='auth')),
+
     path('', mainapp.index, name='index'),
     path('city/', mainapp.city, name='city'),
 
